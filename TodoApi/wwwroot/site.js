@@ -34,8 +34,7 @@ function getData() {
           .append(
             $("<td></td>").append(
               $("<input/>", {
-                type: "checkbox",
-                disabled: true,
+                  type: "checkbox",          
                 checked: item.isComplete
               })
             )
@@ -43,14 +42,14 @@ function getData() {
           .append($("<td></td>").text(item.name))
           .append(
             $("<td></td>").append(
-              $("<button>Edit</button>").on("click", function() {
+              $("<button class=\"btn btn-primary\">Edit</button>").on("click", function() {
                 editItem(item.id);
               })
             )
           )
           .append(
             $("<td></td>").append(
-              $("<button>Delete</button>").on("click", function() {
+              $("<button class=\"btn btn-danger\">Delete</button>").on("click", function() {
                 deleteItem(item.id);
               })
             )

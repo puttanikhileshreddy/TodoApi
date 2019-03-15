@@ -1,21 +1,27 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>To-do CRUD</title>
+    <title>TO DO</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
         input[type='submit'], button, [aria-label] {
             cursor: pointer;
+        }
+        .col-sr{
+            width: 40px;
         }
 
         #spoiler {
             display: none;
         }
-
         table {
             font-family: Arial, sans-serif;
             border: 1px solid;
             border-collapse: collapse;
+        }
+        .close-edit{
+            color:red;
         }
 
         th {
@@ -29,37 +35,46 @@
         }
     </style>
 </head>
-<body>
-    <h1>To-do CRUD</h1>
+<body class="container">
+    <nav class="nav justify-content-center ">
+        <h1>To Do</h1>
+    </nav>
+
     <h3>Add</h3>
     <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
-        <input type="text" id="add-name" placeholder="New to-do">
-        <input type="submit" value="Add">
+        <div class="row">
+            <input class="form-control col-md-4" type="text" id="add-name" placeholder="New to-do">
+            <input class="btn btn-success" type="submit" value="Add">
+        </div>
     </form>
 
     <div id="spoiler">
         <h3>Edit</h3>
-        <form class="my-form">
+        <form class="row my-form">
             <input type="hidden" id="edit-id">
-            <input type="checkbox" id="edit-isComplete">
-            <input type="text" id="edit-name">
-            <input type="submit" value="Save">
-            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+            <input type="checkbox" class="form-check" id="edit-isComplete">
+            <input type="text" class="form-control col-md-4" id="edit-name">
+            <input type="submit" class="btn btn-info" value="Save" title="Save edited">
+            <a onclick="closeInput()" class="ml-2 close-edit" aria-label="Close" title="close it doesn't save anything">&#10006;</a>
         </form>
     </div>
 
     <p id="counter"></p>
 
-    <table>
-        <tr>
-            <th>Is Complete</th>
-            <th>Name</th>
-            <th></th>
-            <th></th>
-        </tr>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th class="col-sr"></th>
+                <th>Name</th>
+                <th class="col-sr">Edit</th>
+                <th class="col-sr">Delete</th>
+            </tr>
+            </thead>
         <tbody id="todos"></tbody>
     </table>
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
