@@ -11,3 +11,4 @@ C:\Users\nputta\source\repos\TodoApi\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.Ass
 C:\Users\nputta\source\repos\TodoApi\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.RazorTargetAssemblyInfo.cache
 C:\Users\nputta\source\repos\TodoApi\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.dll
 C:\Users\nputta\source\repos\TodoApi\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.pdb
+C:\Users\nputta\source\repos\TodoApi\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.csprojAssemblyReference.cache

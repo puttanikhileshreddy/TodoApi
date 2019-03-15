@@ -1,20 +1,23 @@
 const uri = "api/todo";
 let todos = null;
 function getCount(data) {
-  const el = $("#counter");
-  let name = "to-do";
+    const el = $("#counter");
+    let name = "to-do";
   if (data) {
     if (data > 1) {
       name = "to-dos";
     }
-    el.text(data + " " + name);
+      el.text(data + " " + name);
+      $('title').text(data + " " + name);
   } else {
-    el.text("No " + name);
+      el.text("No " + name);
+      $('title').text("No " + name);
   }
 }
 
 $(document).ready(function() {
-  getData();
+    getData();
+    
 });
 
 function getData() {
@@ -34,7 +37,8 @@ function getData() {
           .append(
             $("<td></td>").append(
               $("<input/>", {
-                  type: "checkbox",          
+                  type: "checkbox",
+                  disabled: true,
                 checked: item.isComplete
               })
             )
